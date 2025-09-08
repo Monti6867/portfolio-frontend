@@ -1,37 +1,24 @@
 "use client";
 
-import { AppBar, Toolbar, Button, Typography } from "@mui/material";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 
 export default function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    // Example: check token from localStorage
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);
-  }, []);
-
   return (
-    <AppBar position="static">
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h6">My App</Typography>
-
-        {isLoggedIn ? (
-          <Button color="inherit" component={Link} href="/signout">
-            Sign Out
-          </Button>
-        ) : (
-          <>
-            <Button color="inherit" component={Link} href="/login">
-              Login
-            </Button>
-            <Button color="inherit" component={Link} href="/signup">
-              Signup
-            </Button>
-          </>
-        )}
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          MyApp
+        </Typography>
+        <Button color="inherit" component={Link} href="/">
+          Home
+        </Button>
+        <Button color="inherit" component={Link} href="/signup">
+          Sign Up
+        </Button>
+        <Button color="inherit" component={Link} href="/signin">
+          Sign In
+        </Button>
       </Toolbar>
     </AppBar>
   );
