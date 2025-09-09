@@ -1,13 +1,89 @@
 "use client";
 
-import { Container, Typography, Button, Box, Grid, Paper } from "@mui/material";
+import { Container, Typography, Button, Box, Grid, Paper, Stack } from "@mui/material";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import WorkIcon from "@mui/icons-material/Work";
+import CodeIcon from "@mui/icons-material/Code";
+import SchoolIcon from "@mui/icons-material/School";
+import StarIcon from "@mui/icons-material/Star";
+
 
 export default function HomePage() {
   const router = useRouter();
 
   return (
+    // my section
+    
+
+
+
+
     <Container maxWidth="lg" sx={{ mt: 8 }}>
+      <Grid container spacing={6} alignItems="center">
+        {/* Left Side */}
+        <Grid item xs={12} md={6}>
+          <Typography variant="h3" fontWeight="bold" gutterBottom>
+            Free Portfolio Website Builder
+          </Typography>
+          <Typography variant="body1" color="text.secondary" paragraph>
+            Create and showcase your professional portfolio in minutes.  
+            Simple, elegant, and absolutely free.
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{ mt: 2, borderRadius: 3 }}
+          >
+            Make Free Portfolio
+          </Button>
+        </Grid>
+
+        {/* Right Side */}
+        <Grid item xs={12} md={6} textAlign="center">
+          {/* Main Image */}
+          <Box sx={{ mb: 3 }}>
+            <Image
+              src="/portfolio-preview.png" // put your image inside public folder
+              alt="Portfolio Preview"
+              width={400}
+              height={300}
+              style={{ borderRadius: "12px" }}
+            />
+          </Box>
+
+          {/* Icons with text */}
+          <Stack
+            direction="row"
+            justifyContent="space-around"
+            spacing={3}
+            sx={{ mt: 2 }}
+          >
+            <Box textAlign="center">
+              <WorkIcon fontSize="large" color="primary" />
+              <Typography variant="body2">Professional</Typography>
+            </Box>
+            <Box textAlign="center">
+              <CodeIcon fontSize="large" color="secondary" />
+              <Typography variant="body2">Developer Friendly</Typography>
+            </Box>
+            <Box textAlign="center">
+              <SchoolIcon fontSize="large" sx={{ color: "green" }} />
+              <Typography variant="body2">Learn & Grow</Typography>
+            </Box>
+            <Box textAlign="center">
+              <StarIcon fontSize="large" sx={{ color: "gold" }} />
+              <Typography variant="body2">Stand Out</Typography>
+            </Box>
+          </Stack>
+        </Grid>
+      </Grid>
+
+
+
+
+
       {/* Hero Section */}
       <Paper
         elevation={3}

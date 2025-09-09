@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AppThemeProvider from "@/providers/ThemeProvider";
 import Navbar from "@/components/navbar";
+import '../styles/globals.css';
 
 export const metadata: Metadata = {
   title: "My App",
