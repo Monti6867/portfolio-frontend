@@ -7,6 +7,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import CodeIcon from "@mui/icons-material/Code";
 import SchoolIcon from "@mui/icons-material/School";
 import StarIcon from "@mui/icons-material/Star";
+import FAQ from "../components/FAQ";
 
 
 export default function HomePage() {
@@ -22,7 +23,7 @@ export default function HomePage() {
     <Container maxWidth="lg" sx={{ mt: 8 }}>
       <Grid container spacing={6} alignItems="center">
         {/* Left Side */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="h3" fontWeight="bold" gutterBottom>
             Free Portfolio Website Builder
           </Typography>
@@ -41,11 +42,12 @@ export default function HomePage() {
         </Grid>
 
         {/* Right Side */}
-        <Grid item xs={12} md={6} textAlign="center">
+        <Grid size={{ xs: 12, md: 6 }} textAlign="center">
           {/* Main Image */}
           <Box sx={{ mb: 3 }}>
             <Image
-              src="/portfolio-preview.png" // put your image inside public folder
+              src="/Portfolio.png" // put your image inside public folder
+               
               alt="Portfolio Preview"
               width={400}
               height={300}
@@ -53,7 +55,9 @@ export default function HomePage() {
             />
           </Box>
 
-          {/* Icons with text */}
+          
+        </Grid>
+        {/* Icon With Tect */}
           <Stack
             direction="row"
             justifyContent="space-around"
@@ -77,12 +81,11 @@ export default function HomePage() {
               <Typography variant="body2">Stand Out</Typography>
             </Box>
           </Stack>
-        </Grid>
       </Grid>
 
 
 
-
+      <FAQ />
 
       {/* Hero Section */}
       <Paper
@@ -127,7 +130,7 @@ export default function HomePage() {
         </Typography>
 
         <Grid container spacing={4} sx={{ mt: 2 }}>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Paper elevation={4} sx={{ p: 3, textAlign: "center", borderRadius: 3 }}>
               <Typography variant="h6">📂 Showcase Projects</Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>
@@ -136,7 +139,7 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Paper elevation={4} sx={{ p: 3, textAlign: "center", borderRadius: 3 }}>
               <Typography variant="h6">⚡ Highlight Skills</Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>
@@ -145,7 +148,7 @@ export default function HomePage() {
             </Paper>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Paper elevation={4} sx={{ p: 3, textAlign: "center", borderRadius: 3 }}>
               <Typography variant="h6">🎓 Share Experience</Typography>
               <Typography variant="body2" sx={{ mt: 1 }}>
